@@ -2,6 +2,8 @@
 
 This is the official website for the X11Libre Alpine Linux/Chimera Linux package, hosted on GitHub Pages which also contains prebuilt packages (x86_64 for now).
 
+These packages were built from [this repository](https://github.com/xlibre-alpine/xlibre-ports)
+
 ## About
 
 This website explains our independent approach to providing the X11Libre package for Alpine Linux/Chimera Linux users, bypassing the need for official repository inclusion.
@@ -21,7 +23,7 @@ This website is designed to work with GitHub Pages. To deploy:
 1. Push this repository to GitHub
 2. Enable GitHub Pages in repository settings
 3. Select the main branch as the source
-4. The website will be available at `https://yourusername.github.io/xlibre-alpine-website`
+4. The website will be available at `https://yourusername.github.io/website`
 
 ## Customization
 
@@ -29,8 +31,8 @@ This website is designed to work with GitHub Pages. To deploy:
 
 Update the following URLs in `index.html` to match your actual repository:
 
-- `https://xlibre-alpine.github.io/main/xlibre.rsa.pub`
-- `https://xlibre-alpine.github.io/main`
+- `https://xlibre-alpine.github.io/website/main/xlibre.rsa.pub`
+- `https://xlibre-alpine.github.io/website/main`
 - `https://github.com/xlibre-alpine/apk/issues`
 - `https://github.com/xlibre-alpine/apk/discussions`
 - `https://github.com/xlibre-alpine/apk/wiki`
