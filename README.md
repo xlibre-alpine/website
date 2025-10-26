@@ -4,7 +4,7 @@ This is the official website for the X11Libre Alpine Linux/Chimera Linux package
 
 ## About
 
-This website explains our independent approach to providing the X11Libre package for Alpine Linux users, bypassing the need for official repository inclusion.
+This website explains our independent approach to providing the X11Libre package for Alpine Linux/Chimera Linux users, bypassing the need for official repository inclusion.
 
 ## Features
 
