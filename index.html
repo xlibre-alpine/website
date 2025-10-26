@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X11Libre - Alpine Linux/Chimera Linux Package</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="resources/icon.svg">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="resources/logotext.svg" alt="X11Libre" class="icon" width="600" height="144">
+            <p class="subtitle">Alpine Linux/Chimera Linux Package</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h2>We Don't Wait for Official Repositories</h2>
+                <p class="lead">
+                    While X11Libre may not be added to Alpine's or Chimera's official repositories (see <a href="https://gitlab.alpinelinux.org/alpine/aports/-/merge_requests/86092">for the reason</a>) 
+                    we're taking matters into our own hands even if Chimera Linux maintainers say that "maintainers are being reactionary dipshits". Our community-maintained X11Libre 
+                    package is available through our third-party repository.
+                </p>
+            </section>
+
+            <section class="philosophy">
+                <h3>Our Philosophy</h3>
+                <div class="philosophy-grid">
+                    <div class="philosophy-item">
+                        <h4>🚫 No drama</h4>
+                        <p>We don't care if <a href="https://gts.chimera-linux.org/@chimera/statuses/01JYYNAB4GFQ8Q5JZZ92TRM4WF">"any effort to put xlibre will be rejected on the technical basis of the maintainers being reactionary terrible dipshits"</a>, we just focus on packaging and no political drama happening.</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>⚡ Fast Updates</h4>
+                        <p>Get the latest X11Libre versions without waiting for official repository cycles.</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>🔧 Community-Driven</h4>
+                        <p>Built by users, for users and no unnecessary drama over on a social network argument by a distro. We maintain what we need.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="installation">
+                <h3>Installation Instructions</h3>
+                <div class="alternative-methods">
+                    <div class="method">
+                        <h3>Alpine Linux</h3>
+                        <p>Add our repository to your Alpine Linux system and install X11Libre:</p>
+                        <div class="code-block">
+                            <h4>1. Add the repository key</h4>
+                            <pre><code>wget -O /etc/apk/keys/xlibre.rsa.pub https://xlibre-alpine.github.io/main/xlibre.rsa.pub</code></pre>
+                        </div>
+                        <div class="code-block">
+                            <h4>2. Add the repository to your sources</h4>
+                            <pre><code>echo "https://xlibre-alpine.github.io/main" >> /etc/apk/repositories</code></pre>
+                        </div>
+                        <div class="code-block">
+                            <h4>3. Update package index</h4>
+                            <pre><code>apk update</code></pre>
+                        </div>
+                        <div class="code-block">
+                            <h4>4. Install X11Libre</h4>
+                            <pre><code>apk add xlibre-xserver</code></pre>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <h3>Chimera Linux</h3>
+                        <p>Add our repository to your Chimera Linux system and install X11Libre:</p>
+                        <div class="code-block">
+                            <h4>1. Add the repository key</h4>
+                            <pre><code>wget -O /etc/apk/keys/xlibre.rsa.pub https://xlibre-alpine.github.io/main/xlibre.rsa.pub</code></pre>
+                        </div>
+                        <div class="code-block">
+                            <h4>2. Add the repository to your sources</h4>
+                            <pre><code>echo "https://xlibre-alpine.github.io/chimera/main" >> /etc/apk/repositories</code></pre>
+                        </div>
+                        <div class="code-block">
+                            <h4>3. Update package index</h4>
+                            <pre><code>apk update</code></pre>
+                        </div>
+                        <div class="code-block">
+                            <h4>4. Install X11Libre</h4>
+                            <pre><code>apk add xlibre-xserver</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="alternative-methods">
+                <h3>Alternative Installation Methods</h3>
+                
+                <div class="method">
+                    <h4>One-liner Installation</h4>
+                    <div class="code-block">
+                        <pre><code>wget -O - https://xlibre-alpine.github.io/main/install.sh | sh</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="support">
+                <h3>Support & Community</h3>
+                <div class="support-grid">
+                    <div class="support-item">
+                        <h4>📋 Issues</h4>
+                        <p>Report bugs or request features on our GitHub repository.</p>
+                        <a href="https://github.com/xlibre-alpine/apk/issues" class="btn">Report Issue</a>
+                    </div>
+                    <div class="support-item">
+                        <h4>💬 Discussions</h4>
+                        <p>Join the community discussion about xlibre on Alpine Linux.</p>
+                        <a href="https://github.com/xlibre-alpine/apk/discussions" class="btn">Join Discussion</a>
+                    </div>
+                    <div class="support-item">
+                        <h4>📖 Documentation</h4>
+                        <p>Find detailed documentation and usage examples.</p>
+                        <a href="https://github.com/xlibre-alpine/apk/wiki" class="btn">View Docs</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="why-independent">
+                <h3>Why We Go Independent</h3>
+                <div class="reasons">
+                    <div class="reason">
+                        <h4>🖥️ Community without backlash</h4>
+                        <p>Again, we don't care if there should be <a href="https://gts.chimera-linux.org/@chimera/statuses/01JYYNAB4GFQ8Q5JZZ92TRM4WF">"debates on whether parents of trans children should be lynched in order to ascertain relevant data for security maintenance of xlibre."</a>, or that <a href="https://gts.chimera-linux.org/@chimera/statuses/01JYYNAB4GFQ8Q5JZZ92TRM4WF">"XLibre and its “creator” can go fuck themselves."</a>, we just care about packaging to make Alpine Linux users happy.</p>
+                    </div>
+                    <div class="reason">
+                        <h4>🎯 Focus</h4>
+                        <p>We focus specifically on X11Libre, ensuring it's always up-to-date and properly maintained for Alpine/Chimera Linux users.</p>
+                    </div>
+                    <div class="reason">
+                        <h4>🔄 Flexibility</h4>
+                        <p>We can respond quickly to user feedback and provide custom builds or patches as needed.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 X11Libre Alpine community made by <a href="https://github.com/matu6968">matu6968</a>. Maintained by the community, for the community.</p>
+            <p>
+                <a href="https://github.com/xlibre-alpine/apk">GitHub Repository</a> | 
+                <a href="https://github.com/xlibre-alpine/apk/blob/main/LICENSE">Website license</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
