@@ -2,7 +2,7 @@
 
 This is the official website for the X11Libre Alpine Linux/Chimera Linux package, hosted on GitHub Pages which also contains prebuilt packages (x86_64 for now).
 
-These packages were built from [this repository](https://github.com/xlibre-alpine/xlibre-ports)
+These packages were built from [this repository](https://github.com/xlibre-alpine/xlibre-ports).
 
 ## About
 
@@ -33,9 +33,9 @@ Update the following URLs in `index.html` to match your actual repository:
 
 - `https://xlibre-alpine.github.io/website/main/xlibre.rsa.pub`
 - `https://xlibre-alpine.github.io/website/main`
-- `https://github.com/xlibre-alpine/apk/issues`
-- `https://github.com/xlibre-alpine/apk/discussions`
-- `https://github.com/xlibre-alpine/apk/wiki`
+- `https://github.com/xlibre-alpine/xlibre-ports/issues`
+- `https://github.com/xlibre-alpine/xlibre-ports/discussions`
+- `https://github.com/xlibre-alpine/xlibre-ports/wiki`
 
 ### Styling
 
@@ -63,6 +63,11 @@ The website includes:
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS styling
 └── README.md           # This file
+└── LICENSE             # Project license
+└── main                # Alpine Linux binary repository
+└── chimera/main        # Alpine Linux binary repository
+└── resources           # Website resources (icons)
+└── resources/LICENSE   # Website resources license
 ```
 
 ## License
