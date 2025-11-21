@@ -13,7 +13,7 @@ wget -O /etc/apk/keys/xlibre.rsa.pub https://xlibre-alpine.github.io/website/mai
 if grep -qi 'ID="chimera"' /etc/os-release; then
     echo "Detected Chimera Linux"
     REPO_URL="https://xlibre-alpine.github.io/website/chimera/main"
-elif grep -qi '^ID="alpine"' /etc/os-release; then
+elif grep -qi '^ID=alpine' /etc/os-release; then
     echo "Detected Alpine Linux"
     REPO_URL="https://xlibre-alpine.github.io/website/main"
 else
