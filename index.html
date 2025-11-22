@@ -51,19 +51,24 @@
                         <h3>Alpine Linux</h3>
                         <p>Add our repository to your Alpine Linux system and install X11Libre:</p>
                         <div class="code-block">
-                            <h4>1. Add the repository key</h4>
+                            <h4>1. Enable community repository (required for dependencies)</h4>
+                            <pre><code>sed -i '/^#.*community/s/^#//' /etc/apk/repositories</code></pre>
+                            <p class="note" style="font-size: 0.9em; color: #666; margin-top: 0.5em;">Or manually uncomment the line containing "community" in <code>/etc/apk/repositories</code></p>
+                        </div>
+                        <div class="code-block">
+                            <h4>2. Add the repository key</h4>
                             <pre><code>wget -O /etc/apk/keys/builduser-68fcd79c.rsa.pub https://xlibre-alpine.github.io/website/main/builduser-68fcd79c.rsa.pub</code></pre>
                         </div>
                         <div class="code-block">
-                            <h4>2. Add the repository to your sources</h4>
+                            <h4>3. Add the repository to your sources</h4>
                             <pre><code>echo "https://xlibre-alpine.github.io/website/main" >> /etc/apk/repositories</code></pre>
                         </div>
                         <div class="code-block">
-                            <h4>3. Update package index</h4>
+                            <h4>4. Update package index</h4>
                             <pre><code>apk update</code></pre>
                         </div>
                         <div class="code-block">
-                            <h4>4. Install X11Libre</h4>
+                            <h4>5. Install X11Libre</h4>
                             <pre><code>apk add xlibre-xserver</code></pre>
                         </div>
                     </div>

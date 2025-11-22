@@ -10,6 +10,29 @@ fi
 # The key must be named to match the signature: builduser-68fcd79c.rsa.pub
 wget -O /etc/apk/keys/builduser-68fcd79c.rsa.pub https://xlibre-alpine.github.io/website/main/builduser-68fcd79c.rsa.pub
 
+# Enable community repository (required for dependencies like libxfont2 and libxcvt)
+if grep -qi '^ID=alpine' /etc/os-release; then
+    # Detect Alpine version
+    ALPINE_VERSION=$(grep VERSION_ID /etc/os-release | cut -d'"' -f2 | cut -d'.' -f1,2)
+    if [ -z "$ALPINE_VERSION" ]; then
+        ALPINE_VERSION="v3.22"  # Default fallback
+    else
+        ALPINE_VERSION="v$ALPINE_VERSION"
+    fi
+    COMMUNITY_REPO="http://dl-cdn.alpinelinux.org/alpine/$ALPINE_VERSION/community"
+    
+    # Enable community repo if not already enabled
+    if ! grep -q "^$COMMUNITY_REPO" /etc/apk/repositories && ! grep -q "^#$COMMUNITY_REPO" /etc/apk/repositories; then
+        echo "Adding community repository: $COMMUNITY_REPO"
+        echo "$COMMUNITY_REPO" >> /etc/apk/repositories
+    elif grep -q "^#$COMMUNITY_REPO" /etc/apk/repositories; then
+        echo "Enabling community repository: $COMMUNITY_REPO"
+        sed -i "s|^#$COMMUNITY_REPO|$COMMUNITY_REPO|" /etc/apk/repositories
+    else
+        echo "Community repository already enabled"
+    fi
+fi
+
 # Detect distribution
 if grep -qi 'ID="chimera"' /etc/os-release; then
     echo "Detected Chimera Linux"
