@@ -7,7 +7,8 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Download repository key (used by both Alpine and Chimera)
-wget -O /etc/apk/keys/xlibre.rsa.pub https://xlibre-alpine.github.io/website/main/xlibre.rsa.pub
+# The key must be named to match the signature: builduser-68fcd79c.rsa.pub
+wget -O /etc/apk/keys/builduser-68fcd79c.rsa.pub https://xlibre-alpine.github.io/website/main/builduser-68fcd79c.rsa.pub
 
 # Detect distribution
 if grep -qi 'ID="chimera"' /etc/os-release; then
