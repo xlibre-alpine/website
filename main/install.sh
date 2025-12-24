@@ -6,16 +6,33 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# Detect supported architectures (x86_64 and aarch64/arm64)
+ARCH="$(uname -m)"
+case "$ARCH" in
+    x86_64)
+        KEY_NAME="builduser-68fcd79c.rsa.pub"
+        KEY_URL="https://xlibre-alpine.github.io/website/main/builduser-68fcd79c.rsa.pub"
+        ;;
+    aarch64|arm64)
+        KEY_NAME="user-694af499.rsa.pub"
+        KEY_URL="https://xlibre-alpine.github.io/website/main/user-694af499.rsa.pub"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        echo "Only x86_64 and aarch64/arm64 are supported by the binary repo."
+        exit 1
+        ;;
+esac
+
 # Download repository key (used by both Alpine and Chimera)
-# The key must be named to match the signature: builduser-68fcd79c.rsa.pub
-wget -O /etc/apk/keys/builduser-68fcd79c.rsa.pub https://xlibre-alpine.github.io/website/main/builduser-68fcd79c.rsa.pub
+wget -O "/etc/apk/keys/$KEY_NAME" "$KEY_URL"
 
 # Enable community repository (required for dependencies like libxfont2 and libxcvt)
 if grep -qi '^ID=alpine' /etc/os-release; then
     # Detect Alpine version
     ALPINE_VERSION=$(grep VERSION_ID /etc/os-release | cut -d'"' -f2 | cut -d'.' -f1,2)
     if [ -z "$ALPINE_VERSION" ]; then
-        ALPINE_VERSION="v3.22"  # Default fallback
+        ALPINE_VERSION="v3.23"  # Default fallback
     else
         ALPINE_VERSION="v$ALPINE_VERSION"
     fi

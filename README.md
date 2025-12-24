@@ -1,6 +1,6 @@
 # X11Libre Alpine Linux/Chimera Linux Package Website
 
-This is the official website for the X11Libre Alpine Linux/Chimera Linux package, hosted on GitHub Pages which also contains prebuilt packages (x86_64 for now).
+This is the official website for the X11Libre Alpine Linux/Chimera Linux package, hosted on GitHub Pages which also contains prebuilt packages (x86_64 and arm64 for now).
 
 These packages were built from [this repository](https://github.com/xlibre-alpine/xlibre-ports).
 
