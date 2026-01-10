@@ -44,14 +44,8 @@ copyright information.
     /chimera/main
         /debug/*
     		* (MIT)
-    		xlibre-input-wacom*.apk (GPL-2.0-or-later)
-    	/debug/armv7 (not yet populated)
-    		* (MIT)
-    		xlibre-video-omap*.apk (GPL-2.0-only)
+    		xserver-xlibre-input-wacom*.apk (GPL-2.0-or-later)
     	/*
     		* (MIT)
-    		xlibre-input-wacom*.apk (GPL-2.0-or-later)
-    	/armv7 (not yet populated)
-    		* (MIT)
-    		xlibre-video-omap*.apk (GPL-2.0-only)
+    		xserver-xlibre-input-wacom*.apk (GPL-2.0-or-later)
     	
