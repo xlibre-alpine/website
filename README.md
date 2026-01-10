@@ -65,7 +65,7 @@ The website includes:
 └── README.md           # This file
 └── LICENSE             # Project license
 └── main                # Alpine Linux binary repository
-└── chimera/main        # Alpine Linux binary repository
+└── chimera/main        # Chimera Linux binary repository
 └── resources           # Website resources (icons)
 └── resources/LICENSE   # Website resources license
 ```
