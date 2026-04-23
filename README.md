@@ -70,8 +70,18 @@ The website includes:
 └── resources/LICENSE   # Website resources license
 ```
 
+## Purging policy
+
+To keep Git history small, legacy prebuilt versions of the X11Libre server will eventually be purged time to time based on the following (whichever comes first):
+
+- Every new 10 minor releases (eg. 25.1.6 or 25.2.0 will remove versions below 25.1.5)
+- Every major release (eg. 26.x.x will remove 25.x.x)
+
+This won't change the commit history on the **source package repository** at [xlibre-alpine/xlibre-ports](https://github.com/xlibre-alpine/xlibre-ports), so you can still build from source the legacy versions.
+
 ## License
 
 This website is open source under the MIT license. Feel free to use and modify for your own Alpine Linux packages.
 
 The XLibre logos in the [resources](resources) were obtained from this GitHub issue: https://github.com/X11Libre/xserver/issues/112#issuecomment-3053234708, which is based off the original logo at https://en.wikipedia.org/wiki/File:X.Org_Logo.svg that is licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license.
+
