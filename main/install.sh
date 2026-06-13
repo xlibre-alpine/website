@@ -57,8 +57,11 @@ if grep -qi 'ID="chimera"' /etc/os-release; then
 elif grep -qi '^ID=alpine' /etc/os-release; then
     echo "Detected Alpine Linux"
     REPO_URL="https://xlibre-alpine.github.io/website/main"
+elif grep -qi '^ID=postmarketos' /etc/os-release; then
+    echo "Detected postmarketOS"
+    REPO_URL="https://xlibre-alpine.github.io/website/main"
 else
-    echo "Could not detect Alpine or Chimera Linux in /etc/os-release. It's likely you are not using Alpine or Chimera Linux."
+    echo "Could not detect Alpine, postmarketOS or Chimera Linux in /etc/os-release. It's likely you are not using Alpine, postmarketOS or Chimera Linux."
     exit 1
 fi
 
@@ -73,4 +76,12 @@ fi
 echo "Updating APK index"
 apk update
 
-echo "You can now install X11Libre with: apk add xlibre-xserver"
+if grep -qi 'ID="chimera"' /etc/os-release; then
+    echo "You can now install X11Libre with: apk add xserver-xlibre"
+elif grep -qi '^ID=alpine' /etc/os-release; then
+    echo "You can now install X11Libre with: apk add xlibre-xserver"
+elif grep -qi 'ID="postmarketos"' /etc/os-release; then
+    echo "You can now install X11Libre with: apk add xlibre-xserver-pmos"
+else
+    echo # do nothing
+fi
