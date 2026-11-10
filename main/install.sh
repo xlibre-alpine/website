@@ -57,7 +57,7 @@ if grep -qi 'ID="chimera"' /etc/os-release; then
 elif grep -qi '^ID=alpine' /etc/os-release; then
     echo "Detected Alpine Linux"
     REPO_URL="https://xlibre-alpine.github.io/website/main"
-elif grep -qi '^ID=postmarketos' /etc/os-release; then
+elif grep -qi '^ID="nura"' /etc/os-release; then
     echo "Detected postmarketOS"
     REPO_URL="https://xlibre-alpine.github.io/website/main"
 else
