@@ -32,7 +32,7 @@ if grep -qi '^ID=alpine' /etc/os-release; then
     # Detect Alpine version
     ALPINE_VERSION=$(grep VERSION_ID /etc/os-release | cut -d'"' -f2 | cut -d'.' -f1,2)
     if [ -z "$ALPINE_VERSION" ]; then
-        ALPINE_VERSION="v3.23"  # Default fallback
+        ALPINE_VERSION="v3.24"  # Default fallback
     else
         ALPINE_VERSION="v$ALPINE_VERSION"
     fi
@@ -57,11 +57,11 @@ if grep -qi 'ID="chimera"' /etc/os-release; then
 elif grep -qi '^ID=alpine' /etc/os-release; then
     echo "Detected Alpine Linux"
     REPO_URL="https://xlibre-alpine.github.io/website/main"
-elif grep -qi '^ID=postmarketos' /etc/os-release; then
-    echo "Detected postmarketOS"
+elif grep -Eqi '^ID=(nura|postmarketos)$' /etc/os-release; then
+    echo "Detected postmarketOS/Nura"
     REPO_URL="https://xlibre-alpine.github.io/website/main"
 else
-    echo "Could not detect Alpine, postmarketOS or Chimera Linux in /etc/os-release. It's likely you are not using Alpine, postmarketOS or Chimera Linux."
+    echo "Could not detect Alpine, postmarketOS/Nura or Chimera Linux in /etc/os-release. It's likely you are not using Alpine, postmarketOS/Nura or Chimera Linux."
     exit 1
 fi
 
@@ -76,11 +76,11 @@ fi
 echo "Updating APK index"
 apk update
 
-if grep -qi 'ID="chimera"' /etc/os-release; then
+if grep -qi '^ID="chimera"' /etc/os-release; then
     echo "You can now install X11Libre with: apk add xserver-xlibre"
 elif grep -qi '^ID=alpine' /etc/os-release; then
     echo "You can now install X11Libre with: apk add xlibre-xserver"
-elif grep -qi 'ID="postmarketos"' /etc/os-release; then
+elif grep -Eqi '^ID=(nura|postmarketos)$' /etc/os-release; then
     echo "You can now install X11Libre with: apk add xlibre-xserver-pmos"
 else
     echo # do nothing
